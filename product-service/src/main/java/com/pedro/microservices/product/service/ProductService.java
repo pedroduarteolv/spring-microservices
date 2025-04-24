@@ -22,6 +22,7 @@ public class ProductService {
 
         Product product = Product.builder()
                 .name(productRequest.name())
+                .skuCode(productRequest.skuCode())
                 .description(productRequest.description())
                 .price(productRequest.price())
                 .build();
@@ -30,6 +31,7 @@ public class ProductService {
         return ProductResponse.builder()
                 .id(product.getId())
                 .name(product.getName())
+                .skuCode(product.getSkuCode())
                 .description(product.getDescription())
                 .price(product.getPrice())
                 .build();
@@ -40,6 +42,7 @@ public class ProductService {
                 .stream()
                 .map(product -> ProductResponse.builder()
                         .id(product.getId())
+                        .skuCode(product.getSkuCode())
                         .name(product.getName())
                         .description(product.getDescription())
                         .price(product.getPrice())
